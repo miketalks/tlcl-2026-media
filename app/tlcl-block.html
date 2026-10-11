@@ -1,20 +1,4 @@
 <style>body, .t-body, .t-records { background: #0B0B0B !important; } .t123 .t-container_100, .t123 .t-width_100 { padding: 0 !important; max-width: none !important; }</style>
-<div id="tlcl"> переносится в HTML-блок Тильды T123 целиком, как есть: шрифты (<link>), kit (Magic UI port) и данные
-  вставлены инлайном (блоки размечены комментариями «@inline:css|js путь» … «/@inline»; обновить из исходников: node final/_inline.mjs),
-  cdnjs-скрипты стоят внутри блока. Вне #tlcl — только обёртка doctype/html/head/body. Пути картинок и видео меняются
-  только в window.TLCL_BASE (первый <script> блока; ASSETS.base в скрипте страницы читает его).
-  Перенос в Тильду: блок T123 с настройкой «ширина 100 % / без контейнера» (иначе hero и карусель окажутся в .t-container 1200 px;
-  запасной вариант — #tlcl { width: 100vw; margin-left: calc(50% - 50vw) }); шапку Тильды на странице отключить, либо передать её высоту
-  в --tlcl-top (под ней стоит бегущее табло); cdnjs-набор ровно такой, как ниже: gsap, ScrollTrigger, ScrollToPlugin, Flip, canvas-confetti.
-  Правила BRIEF/DESIGN, которым следует весь файл:
-   1. мобильная версия первична: 390×844 → 360 → 768 → 1440; тач ≥ 44 px, текст ≥ 16 px, подписи ≥ 11 px;
-   2. палитра афиши (#0B0B0B, крем, rose gold → медь → шампань), цвета клубов — только свет/бордер/чип;
-   3. корень #tlcl, классы tlcl-, переменные на #tlcl, скрипты только cdnjs, без правил на html/body внутри блока;
-   4. motion: GSAP 3.13 + kit (порт Magic UI), числа только из MOTION, только transform/opacity в циклах,
-      reduced-motion = статичная целая страница; видео — короткие лупы, пауза вне вьюпорта, текст поверх.
-====================================================================== -->
-</head>
-<body style="margin:0;background:#0B0B0B">
 <div id="tlcl" class="tlcl" data-state="mid">
 <script>
 /* ЕДИНСТВЕННОЕ место с базовыми путями: при переносе в Тильду меняется только этот объект (ASSETS.base в скрипте страницы читает его).
